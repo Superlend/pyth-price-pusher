@@ -1,0 +1,26 @@
+services:
+  price-pusher:
+    image: jaytezsure/price-pusher:v8.0.0
+    restart: always
+    command:
+      - "npm"
+      - "run"
+      - "start"
+      - "--"
+      - "evm"
+      - "--endpoint"
+      # EVM NETWORK ENDPOINT
+      - "https://node.mainnet.etherlink.com"
+      - "--mnemonic-file"
+      - "/mnemonic"
+      # PYTH CONTRACT ADDRESS
+      - "--pyth-contract-address"
+      - "0x2880aB155794e7179c9eE2e38200202908C17B43"
+      # PRICE SERVICE ENDPOINT
+      - "--price-service-endpoint"
+      - "https://hermes.pyth.network"
+      - "--price-config-file"
+      - "/price_config"
+    volumes:
+      - ./mnemonic.txt:/mnemonic
+      - ./price-config.stable.sample.yaml:/price_config
