@@ -27,3 +27,9 @@
   time_difference: 1800
   price_deviation: 0.01
   confidence_ratio: 100
+
+- alias: LBTC/USD
+  id: 8f257aab6e7698bb92b15511915e593d6f8eae914452f781874754b03d0c612b
+  time_difference: 1800
+  price_deviation: 0.1
+  confidence_ratio: 100
